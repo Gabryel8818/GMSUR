@@ -1,0 +1,10 @@
+[   152.755] (II) event12 - CASUE USB KB: is tagged by udev as: Keyboard
+[   152.755] (II) event12 - CASUE USB KB: device is a keyboard
+[   152.755] (II) event12 - CASUE USB KB: device removed
+[   152.777] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:12.0/usb3/3-2/3-2:1.1/0003:2A7A:6A23.0005/input/input16/event12"
+[   152.777] (II) XINPUT: Adding extended input device "CASUE USB KB" (type: KEYBOARD, id 15)
+[   152.777] (**) Option "xkb_layout" "br"
+[   152.777] (**) Option "xkb_variant" "nodeadkeys"
+[   152.782] (II) event12 - CASUE USB KB: is tagged by udev as: Keyboard
+[   152.782] (II) event12 - CASUE USB KB: device is a keyboard
+[   264.055] (II) event13 - Logitech USB Optical Mouse: Enabling spurious button debouncing, see https://wayland.freedesktop.org/libinput/doc/1.10.4/button_debouncing.html for details
