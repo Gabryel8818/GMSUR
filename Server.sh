@@ -25,11 +25,11 @@ while : ; do
 
 		1) system=$(dialog --stdout --title 'Gerenciamento de Software' \
             --radiolist 'Escolha seu sistema' 0 0 0 \
-            1- 'Debian Ubuntu e derivados' on \
-            2- 'Arch Linux e derivados' off\
-            3- 'Red Hat'  off\
-            4- 'Open Suse e Suse'  off\
-            5- 'Gentoo e derivados' off ;)
+            1  'Debian Ubuntu e derivados' on \
+            2 'Arch Linux e derivados' off\
+            3 'Red Hat'  off\
+            4 'Open Suse e Suse'  off\
+            5 'Gentoo e derivados' off ;)
                case $system in 
                   1)sudo apt-get update ;;
                   2)sudo pacman -Syu ;;
