@@ -1,5 +1,5 @@
-<a href="https://github.com/phelliperodrigues/Post-Install-Linux-UbuntuBased"><img 
-src="https://bashlogo.com/img/symbol/jpg/full_colored_light.jpg" title="BashLogo" alt="teste"></a>
+<a href="https://github.com/Gabryel8818/GMSUR"><img 
+src="https://github.com/Gabryel8818/GMSUR/blob/master/ssh.png" title="SSHLogo" alt="teste"></a>
 
 # GMSUR Linux
 
