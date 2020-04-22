@@ -17,12 +17,18 @@ a dialog que possibilita a criação de caixas de diálogo textuais
 8) Criação de usuários em massa por arquivos TXT <br>
 9) Definição de permissões de determinado usuário sobre um arquivo ou diretório
 
+<img src="https://github.com/Gabryel8818/GMSUR/blob/master/GMSUR.gif?raw=true" title="GMSUR" alt="GMSUR">
+
 ## Config para habilitar o arquivo
 
 ```shell
 $ sudo chmod +x Main.sh Server.sh Desktop.sh
 $ ./main.sh
 ```
+### Equipe
+GitHub - <a href="https://github.com/andreysena" target="_blank"> Andrey Sena </a>
+<br>
+GitHub - <a href="https://github.com/Natan-Abreu" target="_blank"> Natan Abreu </a>
 
 ### Contato
 
