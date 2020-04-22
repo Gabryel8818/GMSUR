@@ -1,6 +1,7 @@
 #!/bin/bash
 #  zenity --info --text '<span foreground="blue" font="32">Some\nbig text</span>\n\n<i>(it is also blue)</i>'
 
+
 Exit(){
 	zenity --notification --window-icon='info' --text 'Voce encerrou o programa, obrigado pela utilizaçao' 
 	exit;
@@ -8,6 +9,7 @@ Exit(){
 Cancel(){
 	zenity --notification --window-icon='info' --text 'Voce cancelou a operaçao';
 }
+
 
 
 #Option 1
@@ -154,7 +156,7 @@ User_Mass(){
 	  		file=$(zenity --text 'Digite o nome do arquivo contendo os usuarios' --entry)
 			if [ $? -eq 0 ]
 			then
-				zenity --notification --window-icon='info' --text 'O processo pode demorar dependendo da quantidade de usuarios aguarde'
+				zenity --notification --window-icon='info' --text 'O processo pode demorar dependendo da quantidade de usuarios, aguarde :D'
 				while read line
 				do
 				sudo useradd "$line"
@@ -172,21 +174,35 @@ User_Mass(){
 #Option 9
 Backup(){
     user=`zenity --text 'Digite o nome do usuario do computador onde o backup sera feito' --entry`
-    IP=`zenity --text 'Digite o numero do IP da maquina que sera acessada para o Backup' --entry`
-    zenity --notification --window-icon='warning' --text 'Pesquise pelo arquivo'
-    FIle=`zenity --file-selection --title='Backup'`
-      sudo scp -r "$file" "$user"@"$IP":/home/"$user"; 
-        if [ "$user" -eq 0 ];
-        then
-        zenity --notification --windows-icon='info' --text 'Backup executado com sucesso'
-        else
-        zenity --notification --windows-icon='info' --text 'O backup nao foi executado '
-        fi
+    if [ $? -eq 0  ]
+    then
+	    IP=`zenity --text 'Digite o numero do IP da maquina que sera acessada para o Backup' --entry`
+	    if [ $? -eq 0 ]
+	    then 
+		    zenity --notification --window-icon='warning' --text 'Pesquise pelo arquivo'
+		    FIle=`zenity --file-selection --title='Backup'`
+		      sudo scp -r "$file" "$user"@"$IP":/home/"$user"; 
+		        if [ "$user" -eq 0 ];
+		        then
+		        	zenity --notification --windows-icon='info' --text 'Backup executado com sucesso'
+		        else
+		        	zenity --notification --windows-icon='info' --text 'O backup nao foi executado '
+		        fi
+		else
+			Cancel;
+		fi
+
+	else
+		Cancel;
+	fi
+
   }
   Menu_Gerenciador(){
-      selecionado=$(zenity --list  --text 'Selecione a opçao' --width=400 --height=400 \
-      --column "Escolha"   \
-      --column "Opçao"     \
+  	
+
+     selection=$(zenity --list  --text 'Selecione a opçao' --width=400 --height=400 \
+     --column "Escolha"   \
+     --column "Opçao"     \
       1 'Atualizar os repositorios do sistema'\
       2 'Criar usuario'    \
       3 'Controle Remoto (WINDOWS & LINUX)'  \
@@ -195,9 +211,9 @@ Backup(){
       6 'Definir permissoes de pasta'\
       7 'Definir permissoes de usuario a pasta'\
       8 'Criaçao de usuarios em massa'\
-			9 'Backup' \
+	  9 'Backup' \
       10 'Sair');
-      case $selecionado in
+      case $selection in
       1)Atualizar;;
       2)Create_user;;
       3)Remote_control;;
@@ -212,6 +228,9 @@ Backup(){
       
   }
 
-  while : ; do
+  
+
+  while :
+  do
   Menu_Gerenciador;
   done
